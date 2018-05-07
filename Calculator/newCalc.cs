@@ -22,6 +22,5 @@ namespace Calculator
         {
             return a / b;
         }
-
     }
 }
