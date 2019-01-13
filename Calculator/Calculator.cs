@@ -13,34 +13,34 @@ namespace Calculator
             try
             {
                 Console.Write("Please enter a calculation (i.e. \"2 + 2\"): ");
-                string ab = Console.ReadLine();
-                string[] words = ab.Split(' ');
+                string userString = Console.ReadLine();
+                string[] words = userString.Split(' ');
 
-                int aw = Convert.ToInt32(words[0]);
-                int bw = Convert.ToInt32(words[2]);
+                int firstNum = Convert.ToInt32(words[0]);
+                int secondNum = Convert.ToInt32(words[2]);
 
-                newCalc jc = new newCalc();
-                advCalc adc = new advCalc();
+                NewCalc basicCalculations = new NewCalc();
+                AdvCalc advCalculations = new AdvCalc();
 
                 switch (words[1])
                 {
-                    case ("+"):
-                        Console.WriteLine("{0}", jc.Add(aw, bw));
+                    case "+":
+                        Console.WriteLine("{0}", basicCalculations.Add(firstNum, secondNum));
                         break;
-                    case ("-"):
-                        Console.WriteLine("{0}", jc.Sub(aw, bw));
+                    case "-":
+                        Console.WriteLine("{0}", basicCalculations.Sub(firstNum, secondNum));
                         break;
-                    case ("*"):
-                        Console.WriteLine("{0}", jc.Mult(aw, bw));
+                    case "*":
+                        Console.WriteLine("{0}", basicCalculations.Mult(firstNum, secondNum));
                         break;
-                    case ("/"):
-                        Console.WriteLine("{0}", jc.Div(aw, bw));
+                    case "/":
+                        Console.WriteLine("{0}", basicCalculations.Div(firstNum, secondNum));
                         break;
-                    case ("^"):
-                        Console.WriteLine("{0}", adc.Pow(aw, bw));
+                    case "^":
+                        Console.WriteLine("{0}", advCalculations.Pow(firstNum, secondNum));
                         break;
-                    case ("abs"):
-                        Console.WriteLine("{0}", adc.Abs(aw, 0));
+                    case "abs":
+                        Console.WriteLine("{0}", advCalculations.Abs(firstNum, 0));
                         break;
                     default:
                         Console.WriteLine("No operator was passed.");

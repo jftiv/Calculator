@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Calculator
 {
-    public class advCalc
+    public class AdvCalc
     {
         public double Pow(int a, int b)
         {
